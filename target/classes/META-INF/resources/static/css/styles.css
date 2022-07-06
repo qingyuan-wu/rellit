@@ -1,0 +1,9 @@
+* {
+    margin:0;
+}
+
+div.g_id_signin {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
