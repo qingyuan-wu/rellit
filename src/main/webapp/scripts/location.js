@@ -1,11 +1,12 @@
 // Places the user's coordinates in the Users table
 function getCoordinates() {
+    const container = document.getElementById('location-container');
     // Executes after successful getCurrentPosition() call
     function success(position) {
         const latitude  = position.coords.latitude;
         const longitude = position.coords.longitude;
         // TODO: insert the location information in the User table
-        document.getElementById('location-container').innerHTML = latitude + ", " + longitude; // temp for proof of concept. 
+        container.innerHTML = latitude + ", " + longitude; // temp for proof of concept. 
     }
     // Informs user that their location cannot be determined
     function error() {
