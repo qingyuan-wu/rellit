@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="location.js"></script>
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="loadResponses()">
     <h1>Welcome to Rellit!</h1>
     <div>
         <a href="https://github.com/qingyuan-wu/rellit" target="_blank">Link</a> To our project's GitHub repository
@@ -32,15 +32,34 @@
         data-width=200>
     </div>
 
-    <!--Queries-->
+    <!--Questions-->
     <br>
-    <form method="POST" action="/new-query">
-        <label>Ask a question:</label>
+    <form method="POST" action="/new-question">
+        <label>What are you curious about?</label>
         <input type="text" name="question" />
         <br/>
         <button>Submit</button>
     </form>
-    <!--<button onclick="loadQueries()"></button>
-    <ul id="query-list"></ul>-->
+    
+    <!--MeetUp-->
+    <br>
+    <form method="POST" action="/new-meetup">
+        <label>What would you like to do?</label>
+        <input type="text" name="meet-up" />
+        <br/>
+        <button>Submit</button>
+    </form>
+
+    <!--Chat-->
+    <br>
+    <form method="POST" action="/new-reply">
+        <label>(using this to test the responses in the chat):</label>
+        <input type="text" name="reply" />
+        <br/>
+        <button>Submit</button>
+    </form>
+
+    <ul id="response-list"></ul>
+    
 </body>
 </html>

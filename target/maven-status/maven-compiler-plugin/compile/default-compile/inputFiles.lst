@@ -1,3 +1,7 @@
-/home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/Query.java
+/home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/NewQuestion.java
+/home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/MeetUp.java
 /home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/HelloWorld.java
+/home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/ListQuestions.java
+/home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/Question.java
+/home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/Reply.java
 /home/rfeckoury/rellit/src/main/java/com/google/sps/ServerMain.java
