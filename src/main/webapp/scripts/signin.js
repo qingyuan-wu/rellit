@@ -1,17 +1,3 @@
-// function onSignIn(googleUser) {
-//     console.log(`User: ${JSON.stringify(googleUser.getBasicProfile())}`);
-// }
-
-// function init() {
-//     params = {
-//         client_id: "859550291312-jmcarebfcc8hrqkq4c1p7t5qt5cj7l5f.apps.googleusercontent.com"
-//     }
-//     gapi.load('auth2', function() {
-//         gapi.auth2.init()
-//     });
-// }
-// const jwt_decode = require("jwt-decode");
-
 function handleCredentialResponse(res) {
     const resPayload = jwt_decode(res.credential);
 
