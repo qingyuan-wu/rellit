@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+/home/qwu/rellit/src/main/java/com/google/sps/servlets/HelloWorld.java
+/home/qwu/rellit/src/main/java/com/google/sps/ServerMain.java
+=======
 /home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/NewQuestion.java
 /home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/MeetUp.java
 /home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/HelloWorld.java
@@ -5,3 +9,4 @@
 /home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/Question.java
 /home/rfeckoury/rellit/src/main/java/com/google/sps/servlets/Reply.java
 /home/rfeckoury/rellit/src/main/java/com/google/sps/ServerMain.java
+>>>>>>> main

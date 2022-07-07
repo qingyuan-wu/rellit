@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="script.js"></script>
+    <!--Sign in with Google-->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <script src="scripts/location.js"></script>
+    <script src="scripts/signin.js"></script>
+    <script src="scripts/jwt-decode.js"></script>
+    <script src="scripts/script.js"></script>
+    <meta name="google-signin-client_id" content="859550291312-jmcarebfcc8hrqkq4c1p7t5qt5cj7l5f.apps.googleusercontent.com">
+    <title>rellit</title>
+
+
 </head>
 <body onload="loadResponses()">
     <h1>Welcome to Rellit!</h1>
+    <div id="custom-greeting"></div>
     <div>
         <a href="https://github.com/qingyuan-wu/rellit" target="_blank">Link</a> To our project's GitHub repository
     </div>
-
-    <!--This is just a test to see if the JS function works-->
-    <!--The idea is to call it right after the user signs in-->
     <br>
-    <button onclick="getCoordinates()">Click to get coordinates</button>
-    <p id="location-container"></p>
+    <div id="top-bar">
+        <p>Rellit</p>
+        <p id="google-auth">
 
-    <!--Sign in with Google-->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div id="g_id_onload"
-        data-client_id="859550291312-jmcarebfcc8hrqkq4c1p7t5qt5cj7l5f.apps.googleusercontent.com"
-        data-login_uri="https://summer22-sps-52.appspot.com"
-        data-auto_prompt="false">
+            <div id="g_id_onload"
+                data-client_id="859550291312-jmcarebfcc8hrqkq4c1p7t5qt5cj7l5f.apps.googleusercontent.com"
+                data-context="signin"
+                data-ux_mode="popup"
+                data-callback="handleCredentialResponse">
+            </div>
+
+            <div class="g_id_signin"
+                data-type="standard"
+                data-shape="pill"
+                data-theme="outline"
+                data-text="signin"
+                data-size="large"
+                data-logo_alignment="left">
+            </div>
+        </p>
     </div>
-    <div class="g_id_signin"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-        data-width=200>
-    </div>
+
+    <p id="location">
+        <button onclick="getCoordinates()">Click to get coordinates</button>
+        <p id="location-container"></p>
+    </p>
 
     <!--Questions-->
     <br>
