@@ -8,11 +8,13 @@
     <script src="scripts/location.js"></script>
     <script src="scripts/signin.js"></script>
     <script src="scripts/jwt-decode.js"></script>
+    <script src="scripts/script.js"></script>
     <meta name="google-signin-client_id" content="859550291312-jmcarebfcc8hrqkq4c1p7t5qt5cj7l5f.apps.googleusercontent.com">
     <title>rellit</title>
 
+
 </head>
-<body>
+<body onload="loadResponses()">
     <h1>Welcome to Rellit!</h1>
     <div id="custom-greeting"></div>
     <div>
@@ -55,10 +57,40 @@
             </div>
         </p>
     </div>
+
     <p id="location">
         <button onclick="getCoordinates()">Click to get coordinates</button>
         <p id="location-container"></p>
     </p>
 
+    <!--Questions-->
+    <br>
+    <form method="POST" action="/new-question">
+        <label>What are you curious about?</label>
+        <input type="text" name="question" />
+        <br/>
+        <button>Submit</button>
+    </form>
+    
+    <!--MeetUp-->
+    <br>
+    <form method="POST" action="/new-meetup">
+        <label>What would you like to do?</label>
+        <input type="text" name="meet-up" />
+        <br/>
+        <button>Submit</button>
+    </form>
+
+    <!--Chat-->
+    <br>
+    <form method="POST" action="/new-reply">
+        <label>(using this to test the responses in the chat):</label>
+        <input type="text" name="reply" />
+        <br/>
+        <button>Submit</button>
+    </form>
+
+    <ul id="response-list"></ul>
+    
 </body>
 </html>
