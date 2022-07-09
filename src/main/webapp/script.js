@@ -32,11 +32,30 @@ function loadQuestions() {
 /** Creates an element that represents a question. */
 function createQuestionElement(question) {
     const questionElement = document.createElement('li');
-    //questionElement.className = 'question';
 
-    //const textElement = document.createElement('span');
-    questionElement.innerText = question.text;
+    // Elements for the question
+    const titleElement = document.createElement('h4');
+    titleElement.innerText = 'Question:';
+    const textElement = document.createElement('p');
+    textElement.innerText = question.text;
+
+    // Elements for the time
+    const timeTitleElement = document.createElement('h4');
+    timeTitleElement.innerText = 'Time:';
+    const timeElement = document.createElement('p');
+    timeElement.innerText = question.timestamp;
+
+    // Elements for the username
+    const usernameElement = document.createElement('h4');
+    usernameElement.innerText = 'Username:';
+    const userElement = document.createElement('p');
+    userElement.innerText = question.user;
   
-    //questionElement.appendChild(questionElement);
+    questionElement.appendChild(titleElement);
+    questionElement.appendChild(textElement);
+    questionElement.appendChild(timeTitleElement);
+    questionElement.appendChild(timeElement);
+    questionElement.appendChild(usernameElement);
+    questionElement.appendChild(userElement);
     return questionElement;
 }

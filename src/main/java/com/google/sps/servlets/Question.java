@@ -11,10 +11,10 @@ public final class Question {
   // Holds the resopnses
   private ArrayList<Long> responses;
 
-  public Question(long id, String text, long timestamp) {
+  public Question(long id, String text, long time) {
     this.id = id;
     this.text = text;
-    this.timestamp = timestamp;
+    this.timestamp = time;
   }
 
   // Adds a response to the question
@@ -22,15 +22,15 @@ public final class Question {
     responses.add(responseID);
   }
 
-  public long getTime() {
-      return this.timestamp;
-  }
-
   public long getID() {
-      return this.id;
+      return id;
   }
 
-  public String getTitle() {
-      return this.text;
+  public String getText() {
+      return text;
+  }
+
+  public long getTimestamp() {
+      return timestamp;
   }
 }
