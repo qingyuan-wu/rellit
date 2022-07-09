@@ -19,29 +19,24 @@ function getCoordinates() {
     }
 }
 
-/** Fetches tasks from the server and adds them to the DOM. */
+/** Fetches questions from the server and adds them to the DOM. */
 function loadQuestions() {
-    fetch('/list-responses').then(response => response.json()).then((questions) => {
-      const taskListElement = document.getElementById('response-list');
+    fetch('/list-questions').then(response => response.json()).then((questions) => {
+      const questionListElement = document.getElementById('question-list');
       questions.forEach((question) => {
-        taskListElement.appendChild(createQuestionElement(question));
+        questionListElement.appendChild(createQuestionElement(question));
       })
     });
 }
   
-/** Creates an element that represents a task, including its delete button. */
+/** Creates an element that represents a question. */
 function createQuestionElement(question) {
-    const taskElement = document.createElement('li');
-    taskElement.className = 'response';
+    const questionElement = document.createElement('li');
+    //questionElement.className = 'question';
+
+    //const textElement = document.createElement('span');
+    questionElement.innerText = question.text;
   
-    const titleElement = document.createElement('span');
-    titleElement.innerText = task.title;
-  
-    const deleteButtonElement = document.createElement('button');
-    deleteButtonElement.innerText = 'Delete';
-  
-    taskElement.appendChild(titleElement);
-    taskElement.appendChild(deleteButtonElement);
-    return taskElement;
+    //questionElement.appendChild(questionElement);
+    return questionElement;
 }
-  

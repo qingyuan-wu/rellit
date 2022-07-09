@@ -7,8 +7,6 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.gson.Gson;
-import com.google.sps.servlets.NewQuestion;
-import com.google.sps.servlets.Question;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet responsible for listing tasks. */
+/** Servlet responsible for listing questions. */
 @WebServlet("/list-questions")
 public class ListQuestions extends HttpServlet {
 
@@ -25,7 +23,7 @@ public class ListQuestions extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("Question").build();
+        Query.newEntityQueryBuilder().setKind("Question").setOrderBy(OrderBy.desc("time")).build();
     QueryResults<Entity> results = datastore.run(query);
 
     List<Question> questions = new ArrayList<>();
@@ -33,10 +31,10 @@ public class ListQuestions extends HttpServlet {
       Entity entity = results.next();
 
       long id = entity.getKey().getId();
-      String title = entity.getString("text");
-      long timestamp = entity.getLong("timestamp");
+      String text = entity.getString("text");
+      long timestamp = entity.getLong("time");
 
-      Question question = new Question(id, title, timestamp);
+      Question question = new Question(id, text, timestamp);
       questions.add(question);
     }
 

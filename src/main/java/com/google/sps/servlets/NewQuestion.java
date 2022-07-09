@@ -26,6 +26,10 @@ public class NewQuestion extends HttpServlet {
         Entity.newBuilder(keyFactory.newKey())
             .set("text", text)
             .set("time", timestamp)
+            // Somehow need to get the following info here:
+            .set("location", 0)
+            .set("radius", 0)
+            .set("user", 0)
             .build();
     datastore.put(entity);
 
