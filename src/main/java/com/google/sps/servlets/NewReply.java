@@ -26,6 +26,8 @@ public class NewReply extends HttpServlet {
         Entity.newBuilder(keyFactory.newKey())
             .set("text", text)
             .set("time", timestamp)
+            // TODO: set these values
+            .set("user", 0)
             .build();
     datastore.put(entity);
 

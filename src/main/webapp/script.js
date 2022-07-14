@@ -50,6 +50,14 @@ function createQuestionElement(question) {
     usernameElement.innerText = 'Username:';
     const userElement = document.createElement('p');
     userElement.innerText = question.user;
+
+    // Chat response element for testing purposes
+    const textInput = document.createElement('input');
+    const submitButtonElement = document.createElement('button');
+    submitButtonElement.innerText = 'Submit Response';
+    submitButtonElement.addEventListener('click', () => {
+        submitResponse(question, textInput);
+    });
   
     questionElement.appendChild(titleElement);
     questionElement.appendChild(textElement);
@@ -57,5 +65,16 @@ function createQuestionElement(question) {
     questionElement.appendChild(timeElement);
     questionElement.appendChild(usernameElement);
     questionElement.appendChild(userElement);
+    questionElement.appendChild(textInput);
+    questionElement.appendChild(submitButtonElement);
     return questionElement;
+}
+
+// TODO: update the arraylist in this question object/entity with a resopnseID containing the textInput
+// Note: there is an addResponse() method in the Question.java class
+function submitResponse(question, textInput) {
+    const params = new URLSearchParams();
+    params.append('question', question);
+    params.append('response', textInput)
+    fetch('/add-response', {method: 'POST', body: params});
 }
